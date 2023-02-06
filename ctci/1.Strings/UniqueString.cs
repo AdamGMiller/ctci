@@ -1,17 +1,20 @@
-﻿public class UniqueString
+﻿namespace ctci._1.Strings
 {
-    public bool IsUnique(string input)
+    public class UniqueString
     {
-        var hash = new HashSet<char>();
-        var inputCharacters = input.ToCharArray();
-
-        foreach (var character in inputCharacters)
+        public bool IsUnique(string input)
         {
-            if (!hash.Add(character))
+            var hash = new HashSet<char>();
+            var inputCharacters = input.ToCharArray();
+
+            foreach (var character in inputCharacters)
             {
-                return false;
+                if (!hash.Add(character))
+                {
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
     }
 }

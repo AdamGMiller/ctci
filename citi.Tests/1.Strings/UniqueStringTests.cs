@@ -1,6 +1,8 @@
+using ctci._1.Strings;
+
 namespace citi.Tests
 {
-    public class UniqueStringTests
+    public partial class StringTests
     {
         [Theory]
         [InlineData("abc", true)]
@@ -11,7 +13,7 @@ namespace citi.Tests
         [InlineData("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", false)]
         [InlineData("AaAa", false)]
         [InlineData("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~", false)]
-        public void AllCharactersInTheStringAreProperlyTestedForUniqueness(string input, bool expectedIsUnique)
+        public void UniqueStringTests(string input, bool expectedIsUnique)
         {
             // Arrange
             var uniqueString = new UniqueString();

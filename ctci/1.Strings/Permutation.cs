@@ -1,112 +1,115 @@
-﻿public class Permutation
+﻿namespace ctci._1.Strings
 {
-    public bool CheckInclusion(string permutationString, string containingString)
+    public class Permutation
     {
-        var container = containingString.ToCharArray();
-        var containerLength = containingString.Length;
-        var permutationLength = permutationString.Length;
-        var permutationDictionary = this.CreateDictionaryOfCharactersAndCounts(permutationString);
-        var permutationsFoundCounts = new Dictionary<char, int>();
-        var permutationsFound = 0;
-
-        for (var index = 0; index < containerLength; index++)
+        public bool CheckInclusion(string permutationString, string containingString)
         {
-            var character = container[index];
-            if (permutationDictionary.ContainsKey(character))
-            {
-                IncreaseFoundCharactersByOne(character);
-            }
+            var container = containingString.ToCharArray();
+            var containerLength = containingString.Length;
+            var permutationLength = permutationString.Length;
+            var permutationDictionary = this.CreateDictionaryOfCharactersAndCounts(permutationString);
+            var permutationsFoundCounts = new Dictionary<char, int>();
+            var permutationsFound = 0;
 
-            if (index > permutationLength - 1)
+            for (var index = 0; index < containerLength; index++)
             {
-                ReduceFoundCharactersIfPresent(container[index - permutationLength]);
-            }
-
-            if (index >= permutationLength - 1)
-            {
+                var character = container[index];
                 if (permutationDictionary.ContainsKey(character))
                 {
-                    if (PermutationFound())
+                    IncreaseFoundCharactersByOne(character);
+                }
+
+                if (index > permutationLength - 1)
+                {
+                    ReduceFoundCharactersIfPresent(container[index - permutationLength]);
+                }
+
+                if (index >= permutationLength - 1)
+                {
+                    if (permutationDictionary.ContainsKey(character))
                     {
-                        return true;
+                        if (PermutationFound())
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+
+            bool PermutationFound()
+            {
+                if (permutationsFound != permutationLength)
+                {
+                    return false;
+                }
+
+                if (AllPermutationsFoundCountsAreEqual())
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            bool AllPermutationsFoundCountsAreEqual()
+            {
+                foreach (var character in permutationDictionary.Keys)
+                {
+                    if (!permutationsFoundCounts.ContainsKey(character) || permutationsFoundCounts[character] != permutationDictionary[character])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            void IncreaseFoundCharactersByOne(char character)
+            {
+                permutationsFound++;
+                if (permutationsFoundCounts.ContainsKey(character))
+                {
+                    permutationsFoundCounts[character]++;
+                }
+                else
+                {
+                    permutationsFoundCounts.Add(character, 1);
+                }
+            }
+
+            void ReduceFoundCharactersIfPresent(char character)
+            {
+                if (permutationsFoundCounts.ContainsKey(character))
+                {
+                    permutationsFoundCounts[character]--;
+                    permutationsFound--;
+                    if (permutationsFoundCounts[character] == 0)
+                    {
+                        permutationsFoundCounts.Remove(character);
                     }
                 }
             }
         }
 
-        return false;
-
-        bool PermutationFound()
+        private Dictionary<char, int> CreateDictionaryOfCharactersAndCounts(string s)
         {
-            if (permutationsFound != permutationLength)
-            {
-                return false;
-            }
+            var characters = s.ToCharArray();
+            var dictionary = new Dictionary<char, int>();
 
-            if (AllPermutationsFoundCountsAreEqual())
+            foreach (var character in characters)
             {
-                return true;
-            }
-
-            return false;
-        }
-
-        bool AllPermutationsFoundCountsAreEqual()
-        {
-            foreach (var character in permutationDictionary.Keys)
-            {
-                if (!permutationsFoundCounts.ContainsKey(character) || permutationsFoundCounts[character] != permutationDictionary[character])
+                if (dictionary.ContainsKey(character))
                 {
-                    return false;
+                    dictionary[character] = dictionary[character] + 1;
+                }
+                else
+                {
+                    dictionary.Add(character, 1);
                 }
             }
-            return true;
+
+            return dictionary;
         }
-
-        void IncreaseFoundCharactersByOne(char character)
-        {
-            permutationsFound++;
-            if (permutationsFoundCounts.ContainsKey(character))
-            {
-                permutationsFoundCounts[character]++;
-            }
-            else
-            {
-                permutationsFoundCounts.Add(character, 1);
-            }
-        }
-
-        void ReduceFoundCharactersIfPresent(char character)
-        {
-            if (permutationsFoundCounts.ContainsKey(character))
-            {
-                permutationsFoundCounts[character]--;
-                permutationsFound--;
-                if (permutationsFoundCounts[character] == 0)
-                {
-                    permutationsFoundCounts.Remove(character);
-                }
-            }
-        }
-    }
-
-    private Dictionary<char, int> CreateDictionaryOfCharactersAndCounts(string s)
-    {
-        var characters = s.ToCharArray();
-        var dictionary = new Dictionary<char, int>();
-
-        foreach (var character in characters)
-        {
-            if (dictionary.ContainsKey(character))
-            {
-                dictionary[character] = dictionary[character] + 1;
-            }
-            else
-            {
-                dictionary.Add(character, 1);
-            }
-        }
-
-        return dictionary;
     }
 }
