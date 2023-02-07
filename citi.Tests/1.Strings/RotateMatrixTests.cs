@@ -11,11 +11,11 @@ namespace citi.Tests
             // Arrange
             Color[,] inputMatrix = new Color[2, 2]  {
                 { Color.Red, Color.Blue },
-                { Color.Red, Color.Blue }
+                { Color.Red, Color.Purple }
             };
             Color[,] expectedOutput = new Color[2, 2] {
                 { Color.Red, Color.Red },
-                { Color.Blue, Color.Blue }
+                { Color.Purple, Color.Blue }
             };
 
             var matrix = new Matrix();
@@ -34,12 +34,12 @@ namespace citi.Tests
             Color[,] inputMatrix = new Color[3, 3]  {
                 { Color.Red, Color.Blue, Color.Blue },
                 { Color.Green, Color.Yellow, Color.Blue },
-                { Color.Red, Color.Blue, Color.Blue },
+                { Color.Red, Color.Blue, Color.Purple },
             };
             Color[,] expectedOutput = new Color[3, 3] {
                 { Color.Red, Color.Green, Color.Red },
                 { Color.Blue, Color.Yellow, Color.Blue},
-                { Color.Blue, Color.Blue, Color.Blue },
+                { Color.Purple, Color.Blue, Color.Blue },
             };
 
             var matrix = new Matrix();
