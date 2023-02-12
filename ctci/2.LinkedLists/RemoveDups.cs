@@ -4,10 +4,6 @@
     {
         public Node GetUniqueItems(Node node)
         {
-            // options:
-            // - go through list once and make a dictionary of unique items
-            // - 
-
             var dictionary = new Dictionary<int, Node>();
 
             Node? previousNode = null;
