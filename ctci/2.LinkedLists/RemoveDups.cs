@@ -4,24 +4,21 @@
     {
         public Node GetUniqueItems(Node node)
         {
-            var dictionary = new Dictionary<int, Node>();
+            var nodeValues = new HashSet<int>();
 
-            Node? previousNode = null;
+            Node lastValidNode = node;
             var currentNode = node;
 
             while (currentNode != null)
             {
-                if(dictionary.TryAdd(currentNode.data, currentNode))
+                if (nodeValues.Add(currentNode.data))
                 {
-                    previousNode = currentNode;
-                    currentNode = currentNode.next;
-                }
-                else
-                {
-                    previousNode.next = currentNode.next;
-                    currentNode = currentNode.next?.next;
+                    lastValidNode = currentNode;
                 }
 
+                currentNode = currentNode.next;
+
+                lastValidNode.next = currentNode;
             }
 
             return node;

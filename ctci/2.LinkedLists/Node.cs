@@ -47,7 +47,7 @@
             List<int> data = new List<int>();
             var node = this;
             while(node != null) {
-                data.Append(node.data);
+                data.Add(node.data);
                 node = node.next;
             }
 
