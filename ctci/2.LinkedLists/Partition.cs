@@ -4,23 +4,51 @@
     {
         public Node PartitionAroundValue(Node node, int value)
         {
+            var lowNode = (Node?)null;
+            var lastLowNode = (Node?)null;
+            var highNode = (Node?)null;
+
             var currentNode = node;
 
-            while (currentNode.next != null)
+            while (currentNode != null)
             {
-                if(currentNode.data < value)
+                if (currentNode.data < value)
                 {
-                    continue;
+                    if (lowNode == null)
+                    {
+                        lowNode = new Node(currentNode.data);
+                        lastLowNode = lowNode;
+                    }
+                    else
+                    {
+                        lowNode.appendToTail(currentNode.data);
+                        lastLowNode = lastLowNode.next;
+                    }
                 }
-
-                var currentData = currentNode.data;
-                currentNode.data = currentNode.next.data;
-                currentNode.next.data = currentData;
+                else
+                {
+                    if (highNode == null)
+                    {
+                        highNode = new Node(currentNode.data);
+                    }
+                    else
+                    {
+                        highNode.appendToTail(currentNode.data);
+                    }
+                }
 
                 currentNode = currentNode.next;
             }
 
-            return node;
+            if (lastLowNode != null)
+            {
+                lastLowNode.next = highNode;
+                return lowNode;
+            }
+            else
+            {
+                return highNode;
+            }
         }
     }
 }

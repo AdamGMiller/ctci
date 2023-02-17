@@ -18,7 +18,7 @@ namespace citi.Tests
             var nodeInMiddle = node?.next;
 
             var expectedResult = new Node(1);
-            expectedResult.appendToTail(2);
+            expectedResult.appendToTail(3);
             expectedResult.appendToTail(4);
 
             // Act
