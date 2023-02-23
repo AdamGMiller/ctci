@@ -1,6 +1,6 @@
 using ctci._1.Strings;
 
-namespace citi.Tests
+namespace citi.Tests._1.Strings
 {
     public partial class StringTests
     {
