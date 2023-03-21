@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ctci", "ctci.csproj", "{A3ACA944-9413-4E0B-99BE-91257E432E37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ctci", ".\ctci\ctci.csproj", "{A3ACA944-9413-4E0B-99BE-91257E432E37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "citi.Tests", "..\citi.Tests\citi.Tests.csproj", "{464353B4-1CB6-4773-99B5-C3D4D23C392B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "citi.Tests", ".\ctci.Tests\citi.Tests.csproj", "{464353B4-1CB6-4773-99B5-C3D4D23C392B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
