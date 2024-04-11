@@ -1,8 +1,8 @@
-using ctci._1.Strings;
-
 namespace citi.Tests._1.Strings
 {
-    public partial class StringTests
+    using ctci._1.Strings;
+
+    public class StringCompressionTests
     {
         [Theory]
         [InlineData("abcd", "abcd")]
@@ -11,7 +11,7 @@ namespace citi.Tests._1.Strings
         [InlineData("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz")]
         [InlineData("AAaa", "A2a2")]
         [InlineData("", "")]
-        public void StringCompressionTests(string input, string expectedOutput)
+        public void CompressesAsExpected(string input, string expectedOutput)
         {
             // Arrange
             var stringCompression = new StringCompression();

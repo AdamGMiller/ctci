@@ -1,8 +1,6 @@
-namespace citi.Tests._2.StacksAndQueues
+namespace citi.Tests._3.StacksAndQueues
 {
-    using citi.Tests._3.StacksAndQueues;
-
-    public partial class StacksAndQueuesTests
+    public class ThreeStacksOneArrayTests
     {
         [Fact]
         public void CanPushToAllStacks()

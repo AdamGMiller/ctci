@@ -1,9 +1,8 @@
-using ctci._2.LinkedLists;
-
 namespace citi.Tests._2.LinkedLists
 {
-    public partial class LinkedListsTests
+    using ctci._2.LinkedLists;
 
+    public class GetKthToListTests
     {
         [Fact]
         public void CanGetKthToLastNode()

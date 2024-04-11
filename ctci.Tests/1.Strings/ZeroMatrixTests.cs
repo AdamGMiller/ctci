@@ -1,8 +1,8 @@
-using ctci._1.Strings;
-
 namespace citi.Tests._1.Strings
 {
-    public partial class StringTests
+    using ctci._1.Strings;
+
+    public class ZeroMatrixTests
     {
         [Fact]
         public void ZeroMatrixWith3x3AndCenterZero()

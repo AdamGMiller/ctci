@@ -1,8 +1,8 @@
-using ctci._1.Strings;
-
 namespace citi.Tests._1.Strings
 {
-    public partial class StringTests
+    using ctci._1.Strings;
+
+    public class StringRotationTests
     {
         [Theory]
         [InlineData("abcd", "cdab", true)]
@@ -11,7 +11,7 @@ namespace citi.Tests._1.Strings
         [InlineData("abcdefghijklmnopqrstuvwxyz", "vwxyzabcd", false)]
         [InlineData("abc", "z", false)]
         [InlineData("abc", "cba", false)]
-        public void StringRotationTests(string originalString, string possibleRotation, bool expectedIsRotation)
+        public void RotatesStringAsExpected(string originalString, string possibleRotation, bool expectedIsRotation)
         {
             // Arrange
             var stringRotation = new StringRotation();

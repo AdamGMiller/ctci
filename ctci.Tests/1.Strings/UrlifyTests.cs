@@ -1,12 +1,12 @@
-using ctci._1.Strings;
-
 namespace citi.Tests._1.Strings
 {
-    public partial class StringTests
+    using ctci._1.Strings;
+
+    public class UrlifyTests
     {
         [Theory]
         [InlineData("Test input here      ", 13, "Test%20input%20here")]
-        public void UrlifyTests(string input, int stringLength, string expectedOutput)
+        public void UrlifyWorksAsExpected(string input, int stringLength, string expectedOutput)
         {
             // Arrange
             var urlifiedString = new Urlify();

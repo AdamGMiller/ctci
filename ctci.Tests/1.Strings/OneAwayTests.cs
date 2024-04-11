@@ -1,8 +1,8 @@
-using ctci._1.Strings;
-
 namespace citi.Tests._1.Strings
 {
-    public partial class StringTests
+    using ctci._1.Strings;
+
+    public class OneAwayTests
     {
         [Theory]
         [InlineData("pale", "pale", true)]
@@ -15,7 +15,7 @@ namespace citi.Tests._1.Strings
         [InlineData("a", "", true)]
         [InlineData("pale", "bake", false)]
         [InlineData("le", "bake", false)]
-        public void OneAway(string initial, string modified, bool expectedResult)
+        public void ChecksOneAway(string initial, string modified, bool expectedResult)
         {
             // Arrange
             var oneAway = new OneAway();
