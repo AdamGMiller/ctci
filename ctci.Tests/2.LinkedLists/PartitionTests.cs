@@ -10,16 +10,16 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var partition = new Partition();
             var node = new Node(8);
-            node.appendToTail(2);
-            node.appendToTail(9);
-            node.appendToTail(4);
+            node.AppendToTail(2);
+            node.AppendToTail(9);
+            node.AppendToTail(4);
 
             var value = 5;
 
             var expectedResult = new Node(2);
-            expectedResult.appendToTail(4);
-            expectedResult.appendToTail(8);
-            expectedResult.appendToTail(9);
+            expectedResult.AppendToTail(4);
+            expectedResult.AppendToTail(8);
+            expectedResult.AppendToTail(9);
 
             // Act
             var actualResult = partition.PartitionAroundValue(node, value);

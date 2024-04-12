@@ -10,10 +10,10 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var palindrome = new Palindrome();
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(2);
-            node.appendToTail(1);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(2);
+            node.AppendToTail(1);
 
             var expectedResult = true;
 
@@ -30,10 +30,10 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var palindrome = new Palindrome();
             var node = new Node(9);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(2);
-            node.appendToTail(1);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(2);
+            node.AppendToTail(1);
 
             var expectedResult = false;
 

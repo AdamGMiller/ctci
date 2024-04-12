@@ -10,16 +10,16 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var sumLists = new SumLists();
             var firstNode = new Node(5);
-            firstNode.appendToTail(2);
-            firstNode.appendToTail(5);
+            firstNode.AppendToTail(2);
+            firstNode.AppendToTail(5);
             var secondNode = new Node(9);
-            secondNode.appendToTail(0);
-            secondNode.appendToTail(8);
+            secondNode.AppendToTail(0);
+            secondNode.AppendToTail(8);
 
             var expectedResult = new Node(4);
-            expectedResult.appendToTail(3);
-            expectedResult.appendToTail(3);
-            expectedResult.appendToTail(1);
+            expectedResult.AppendToTail(3);
+            expectedResult.AppendToTail(3);
+            expectedResult.AppendToTail(1);
 
             // Act
             var actualResult = sumLists.SumNumbersStoredInReverseOrder(firstNode, secondNode);
@@ -35,12 +35,12 @@ namespace citi.Tests._2.LinkedLists
             var sumLists = new SumLists();
             var firstNode = new Node(1);
             var secondNode = new Node(9);
-            secondNode.appendToTail(0);
-            secondNode.appendToTail(8);
+            secondNode.AppendToTail(0);
+            secondNode.AppendToTail(8);
 
             var expectedResult = new Node(0);
-            expectedResult.appendToTail(1);
-            expectedResult.appendToTail(8);
+            expectedResult.AppendToTail(1);
+            expectedResult.AppendToTail(8);
 
             // Act
             var actualResult = sumLists.SumNumbersStoredInReverseOrder(firstNode, secondNode);

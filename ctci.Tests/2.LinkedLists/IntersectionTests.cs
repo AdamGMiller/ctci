@@ -10,15 +10,15 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var intersection = new Intersection();
             var firstNode = new Node(1);
-            firstNode.appendToTail(2);
-            firstNode.appendToTail(3);
-            firstNode.appendToTail(2);
-            firstNode.appendToTail(1);
+            firstNode.AppendToTail(2);
+            firstNode.AppendToTail(3);
+            firstNode.AppendToTail(2);
+            firstNode.AppendToTail(1);
 
             var secondNode = new Node(1);
-            secondNode.appendToTail(2);
+            secondNode.AppendToTail(2);
             secondNode.next.next = firstNode.next.next;
-            secondNode.appendToTail(3);
+            secondNode.AppendToTail(3);
 
             var expectedResult = firstNode.next.next;
 
@@ -35,14 +35,14 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var intersection = new Intersection();
             var firstNode = new Node(1);
-            firstNode.appendToTail(2);
-            firstNode.appendToTail(3);
-            firstNode.appendToTail(2);
-            firstNode.appendToTail(1);
+            firstNode.AppendToTail(2);
+            firstNode.AppendToTail(3);
+            firstNode.AppendToTail(2);
+            firstNode.AppendToTail(1);
 
             var secondNode = new Node(1);
-            secondNode.appendToTail(2);
-            secondNode.appendToTail(3);
+            secondNode.AppendToTail(2);
+            secondNode.AppendToTail(3);
 
             var expectedResult = (Node?)null;
 

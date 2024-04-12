@@ -16,7 +16,7 @@
                     outputNode = new Node(valueToStoreInNode);
                 } else
                 {
-                    outputNode.appendToTail(valueToStoreInNode);
+                    outputNode.AppendToTail(valueToStoreInNode);
                 }
 
                 firstNode = firstNode?.next;
@@ -25,7 +25,7 @@
 
             if(carryTen)
             {
-                outputNode.appendToTail(1);
+                outputNode.AppendToTail(1);
             }
 
             return outputNode;

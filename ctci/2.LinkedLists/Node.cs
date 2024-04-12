@@ -10,7 +10,7 @@
             data = d;
         }
 
-        public void appendToTail(int d)
+        public void AppendToTail(int d)
         {
             Node end = new Node(d);
             Node n = this;
@@ -21,7 +21,7 @@
             n.next = end;
         }
 
-        public Node deleteNode(Node head, int d)
+        public Node DeleteNode(Node head, int d)
         {
             Node n = head;
 

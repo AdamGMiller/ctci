@@ -10,15 +10,15 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var removeDups = new RemoveDups();
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(4);
-            node.appendToTail(4);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(4);
+            node.AppendToTail(4);
 
             var expectedResult = new Node(1);
-            expectedResult.appendToTail(2);
-            expectedResult.appendToTail(3);
-            expectedResult.appendToTail(4);
+            expectedResult.AppendToTail(2);
+            expectedResult.AppendToTail(3);
+            expectedResult.AppendToTail(4);
 
             // Act
             var actualResult = removeDups.GetUniqueItems(node);
@@ -33,18 +33,18 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var removeDups = new RemoveDups();
             var node = new Node(100);
-            node.appendToTail(2);
-            node.appendToTail(52);
-            node.appendToTail(100);
-            node.appendToTail(100);
-            node.appendToTail(100);
-            node.appendToTail(100);
-            node.appendToTail(43);
+            node.AppendToTail(2);
+            node.AppendToTail(52);
+            node.AppendToTail(100);
+            node.AppendToTail(100);
+            node.AppendToTail(100);
+            node.AppendToTail(100);
+            node.AppendToTail(43);
 
             var expectedResult = new Node(100);
-            expectedResult.appendToTail(2);
-            expectedResult.appendToTail(52);
-            expectedResult.appendToTail(43);
+            expectedResult.AppendToTail(2);
+            expectedResult.AppendToTail(52);
+            expectedResult.AppendToTail(43);
 
             // Act
             var actualResult = removeDups.GetUniqueItems(node);
@@ -59,10 +59,10 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var removeDups = new RemoveDups();
             var node = new Node(1);
-            node.appendToTail(1);
-            node.appendToTail(1);
-            node.appendToTail(1);
-            node.appendToTail(1);
+            node.AppendToTail(1);
+            node.AppendToTail(1);
+            node.AppendToTail(1);
+            node.AppendToTail(1);
 
             var expectedResult = new Node(1);
 

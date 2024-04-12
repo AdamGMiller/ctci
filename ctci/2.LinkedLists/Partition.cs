@@ -21,7 +21,7 @@
                     }
                     else
                     {
-                        lowNode.appendToTail(currentNode.data);
+                        lowNode.AppendToTail(currentNode.data);
                         lastLowNode = lastLowNode.next;
                     }
                 }
@@ -33,7 +33,7 @@
                     }
                     else
                     {
-                        highNode.appendToTail(currentNode.data);
+                        highNode.AppendToTail(currentNode.data);
                     }
                 }
 

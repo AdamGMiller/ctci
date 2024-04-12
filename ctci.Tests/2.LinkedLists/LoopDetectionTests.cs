@@ -10,7 +10,7 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var loopDetection = new LoopDetection();
             var node = new Node(1);
-            node.appendToTail(2);
+            node.AppendToTail(2);
             node.next.next = node.next;
 
             var expectedResult = node.next;
@@ -28,10 +28,10 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var loopDetection = new LoopDetection();
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(2);
-            node.appendToTail(1);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(2);
+            node.AppendToTail(1);
 
             var expectedResult = (Node?)null;
 

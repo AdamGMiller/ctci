@@ -11,11 +11,11 @@ namespace citi.Tests._2.LinkedLists
             var getKthToLast = new GetKthToLast();
             var k = 3;
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(4);
-            node.appendToTail(5);
-            node.appendToTail(6);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(4);
+            node.AppendToTail(5);
+            node.AppendToTail(6);
 
             var expectedData = 3;
 
@@ -33,11 +33,11 @@ namespace citi.Tests._2.LinkedLists
             var getKthToLast = new GetKthToLast();
             var k = 0;
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(4);
-            node.appendToTail(5);
-            node.appendToTail(6);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(4);
+            node.AppendToTail(5);
+            node.AppendToTail(6);
 
             var expectedData = 6;
 
@@ -55,11 +55,11 @@ namespace citi.Tests._2.LinkedLists
             var getKthToLast = new GetKthToLast();
             var k = 100;
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(4);
-            node.appendToTail(5);
-            node.appendToTail(6);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(4);
+            node.AppendToTail(5);
+            node.AppendToTail(6);
 
             var expectedData = (int?)null;
 

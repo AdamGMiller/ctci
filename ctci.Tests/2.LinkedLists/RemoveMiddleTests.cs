@@ -10,15 +10,15 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var removeMiddle = new RemoveMiddle();
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(4);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(4);
 
             var nodeInMiddle = node?.next;
 
             var expectedResult = new Node(1);
-            expectedResult.appendToTail(3);
-            expectedResult.appendToTail(4);
+            expectedResult.AppendToTail(3);
+            expectedResult.AppendToTail(4);
 
             // Act
             var actualResult = removeMiddle.RemoveItemFromLinkedList(nodeInMiddle);
@@ -34,9 +34,9 @@ namespace citi.Tests._2.LinkedLists
             // Arrange
             var removeMiddle = new RemoveMiddle();
             var node = new Node(1);
-            node.appendToTail(2);
-            node.appendToTail(3);
-            node.appendToTail(4);
+            node.AppendToTail(2);
+            node.AppendToTail(3);
+            node.AppendToTail(4);
 
             var nodeInMiddle = node?.next?.next?.next;
 
