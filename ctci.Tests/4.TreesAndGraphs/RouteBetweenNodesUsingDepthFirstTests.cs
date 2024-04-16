@@ -1,4 +1,4 @@
-﻿namespace citi.Tests._3.StacksAndQueues
+﻿namespace citi.Tests._4.TreesAndGraphs
 {
     using ctci._4.TreesAndGraphs;
 
