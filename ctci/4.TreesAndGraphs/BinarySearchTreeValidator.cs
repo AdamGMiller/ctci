@@ -2,13 +2,11 @@
 {
     public class BinarySearchTreeValidator(TreeNode root)
     {
-        private int largestValue = root.Data;
-
         private bool isValid = true;
 
         public bool IsValid()
         {
-            var max = this.MaxOfChildNodes(root);
+            this.MaxOfChildNodes(root);
             return this.isValid;
         }
 
@@ -16,28 +14,34 @@
         {
             if (this.isValid == false)
             {
-                return Int32.MinValue;
+                return int.MinValue;
             }
 
-            var leftMax = (int?)null;
-            var rightMax = (int?)null;
             if (node.Left != null)
             {
-                leftMax = this.MaxOfChildNodes(node.Left);
-            }
-            if (node.Right != null)
-            {
-                rightMax = this.MaxOfChildNodes(node.Right);
+                int? leftMax = this.MaxOfChildNodes(node.Left);
+                if (leftMax > node.Data)
+                {
+                    this.isValid = false;
+                    return int.MinValue;
+                }
             }
 
-            if ((leftMax != null && leftMax > node.Data) || (rightMax != null && rightMax <= node.Data))
+            if (node.Right == null)
+            {
+                return node.Data;
+            }
+
+            int? rightMax = this.MaxOfChildNodes(node.Right);
+            if (rightMax <= node.Data)
             {
                 this.isValid = false;
-                return Int32.MinValue;
+                return int.MinValue;
             }
-
-            int[] values = [node.Data, leftMax ?? int.MinValue, rightMax ?? int.MinValue];
-            return values.Max();
+            else
+            {
+                return rightMax.Value;
+            }
         }
     }
 }
